@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://primegearlab.com/pazoma-racing/sitemap.xml
