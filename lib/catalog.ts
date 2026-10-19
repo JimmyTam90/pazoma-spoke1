@@ -214,6 +214,15 @@ export const CATEGORIES: Category[] = [
     specs: ['Windshield collection', 'Club style fairings', 'Model-specific fitment'],
     cta: 'Shop Windshields',
   },
+  {
+    id: 'catalog',
+    slug: 'all-products',
+    name: 'Full Parts Catalog',
+    blurb: 'Every Pazoma Racing collection in one place.',
+    image: PRODUCTS[6].image,
+    specs: ['Browse all collections', 'Search by model and year', 'Apply code PF10 at checkout'],
+    cta: 'Browse All Parts',
+  },
 ];
 
 /* ---------- Central destination resolver ---------- */

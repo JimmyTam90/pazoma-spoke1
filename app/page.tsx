@@ -4,7 +4,8 @@ import Card from '@/components/Card';
 import CouponBox from '@/components/CouponBox';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import { CATEGORIES, PRODUCTS, formatPrice } from '@/lib/catalog';
-import { SITE, pageUrl } from '@/lib/config';
+import RatingBlock from '@/components/RatingBlock';
+import { SITE, VIDEO, pageUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
   alternates: { canonical: pageUrl('') },
@@ -60,6 +61,7 @@ export default function Home() {
               Explore Pazoma Racing aftermarket exhausts, LED lighting, handlebars, levers, crash guards and fairings for Softail, Touring and Dyna builds.
               We organize the catalog, point out fitment details and send you straight to the Pazoma Racing store.
             </p>
+            <RatingBlock />
             <ul className="mt-5 space-y-2 text-sm text-gray-300">
               <li>✔ Free shipping banner on orders over $49 (per merchant site)</li>
               <li>✔ {SITE.coupon.discount} off storewide with code {SITE.coupon.code}</li>
@@ -138,6 +140,22 @@ export default function Home() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* VIDEO */}
+      <section id="video" className="mx-auto max-w-4xl px-4 py-14">
+        <h2 className="text-center text-2xl font-extrabold text-white sm:text-3xl">Watch the Video</h2>
+        <div className="mt-6 aspect-video w-full overflow-hidden rounded-2xl border border-[#1e293b] bg-slate-950 shadow-lg">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${VIDEO.id}`}
+            title={VIDEO.title}
+            loading="lazy"
+            className="h-full w-full"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
         </div>
       </section>
 

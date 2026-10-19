@@ -20,6 +20,23 @@ export const SITE = {
   ogImageAlt: 'Pazoma Racing 2-into-1 full complete stainless steel exhaust system for Harley Softail',
 } as const;
 
+/**
+ * Review rating. Leave null until you have a real, verifiable rating
+ * (e.g. from the merchant or a review platform) — the block is then hidden.
+ * Example: { value: 4.8, count: 120, source: 'Pazoma Racing store reviews' }
+ */
+export const RATING: { value: number; count: number; source: string } | null = null;
+
+export const VIDEO = { id: 'w9_JWPn-M_8', title: 'Pazoma Racing video' } as const;
+
+export const SOCIALS = [
+  { name: 'Facebook', href: 'https://www.facebook.com/primegearlab/' },
+  { name: 'X (Twitter)', href: 'https://x.com/primegearlab' },
+  { name: 'Instagram', href: 'https://www.instagram.com/primegearlab/' },
+] as const;
+
+export const FREE_SHIPPING_TEXT = 'FREE SHIPPING ON ORDERS OVER $49';
+
 /** Prefix a public-folder asset path with the configured basePath. */
 export const asset = (path: string) => `${BASE_PATH}${path.startsWith('/') ? path : `/${path}`}`;
 
