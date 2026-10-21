@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
-import { BREVO_FORM_ACTION, asset } from '@/lib/config';
+import { BREVO_FORM_ACTION } from '@/lib/config';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -89,7 +89,7 @@ export default function NewsletterForm() {
           <p className="mx-auto mt-1 max-w-xl text-xs text-gray-500">
             By subscribing you agree to receive marketing emails from PrimeGearLab. Unsubscribe anytime. See our{' '}
             <Link 
-              href={asset('/privacy')} 
+              href="/privacy" 
               className="text-amber-400 underline transition hover:text-amber-300"
               target="_blank"
               rel="noopener noreferrer"
