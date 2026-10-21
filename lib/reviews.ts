@@ -32,7 +32,7 @@ export const REVIEWS: Review[] = [
     verified: true,
     source: 'Verified Customer Review - Pazoma Racing Store',
     photo: {
-      src: '/reviews/r2.png',
+      src: '/reviews/r2.PNG', // Đã đổi sang chữ HOA .PNG
       alt: 'Adam Phillips installing Handlebar Tall Pullback Risers on Pan America 1250',
     },
   },
@@ -45,7 +45,7 @@ export const REVIEWS: Review[] = [
     verified: true,
     source: 'Verified Customer Review - Pazoma Racing Store',
     photo: {
-      src: '/reviews/r3.png',
+      src: '/reviews/r3.PNG', // Đã đổi sang chữ HOA .PNG
       alt: 'Pazoma Front Highway Engine Guard Crash Bar installed on Softail',
     },
   },
