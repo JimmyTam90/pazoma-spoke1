@@ -53,3 +53,6 @@ export const asset = (path: string) => `${BASE_PATH}${path.startsWith('/') ? pat
 
 /** Absolute public URL for a page path (no trailing slash). */
 export const pageUrl = (path = '') => `${SITE.canonicalBase}${path}`;
+
+/** Helper alias for basePath integration across contact and support components. */
+export const withBase = (path = '') => asset(path);
