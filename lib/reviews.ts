@@ -1,10 +1,3 @@
-/**
- * Customer reviews — REAL reviews collected from verified Harley-Davidson riders
- * and customizers using Pazoma Racing performance parts and accessories.
- *
- * Photo: Uses allowed merchant CDN URLs on www.pazomaracing.com/cdn/shop/
- * (configured & allowed in next.config.js).
- */
 export type Review = {
   id: string;
   author: string;
@@ -20,7 +13,7 @@ export const REVIEWS: Review[] = [
   {
     id: 'r1',
     author: 'Mark T.',
-    vehicle: '2021 Harley Street Glide Special',
+    vehicle: 'Harley Street Glide Special',
     rating: 5,
     text: 'Installed the Pazoma 2-Into-1 Full Exhaust System on my Street Glide. Deep aggressive sound, noticeable mid-range torque boost, and fitment was 100% spot on!',
     verified: true,
@@ -32,28 +25,28 @@ export const REVIEWS: Review[] = [
   },
   {
     id: 'r2',
-    author: 'Jason K.',
-    vehicle: '2022 Low Rider ST (FXLRST)',
+    author: 'Adam Phillips',
+    vehicle: 'Harley Pan America 1250',
     rating: 5,
-    text: 'Top quality CNC aluminum handlebars and custom levers. The black anodized finish matches the OEM Harley styling seamlessly. Fast shipping over $49!',
+    text: 'Makes for a much more comfortable riding position over the standard risers.',
     verified: true,
     source: 'Verified Customer Review - Pazoma Racing Store',
     photo: {
-      src: 'https://www.pazomaracing.com/cdn/shop/files/1_1_8_28mm_Handlebar_Risers_Top_Clamp_Kit_For_Harley_Softail_Street_Bob_Low_Rider_S_ST_2018-2024.jpg?v=1788530438',
-      alt: 'Pazoma CNC Aluminum Handlebar Risers for Harley Low Rider ST',
+      src: '/reviews/r2.png',
+      alt: 'Adam Phillips installing Handlebar Tall Pullback Risers on Pan America 1250',
     },
   },
   {
     id: 'r3',
-    author: 'David L.',
-    vehicle: '2023 Pan America 1250 Special',
+    author: 'Monica Stein',
+    vehicle: 'Harley Softail Low Rider S',
     rating: 5,
-    text: 'Pazoma crash guards saved my bike during an off-road trip. Extremely solid stainless steel construction and super straightforward bolt-on installation.',
+    text: 'I love it ! Fit perfectly and Im glad I found y’all !',
     verified: true,
     source: 'Verified Customer Review - Pazoma Racing Store',
     photo: {
-      src: 'https://www.pazomaracing.com/cdn/shop/files/Highway_Engine_Guard_Crash_Bar_Bumper_For_Harley_Pan_America_1250_Special_RA1250_RA1250S_2021-2024.jpg?v=1788530438',
-      alt: 'Pazoma Engine Guard Crash Bar for Harley Pan America 1250',
+      src: '/reviews/r3.png',
+      alt: 'Pazoma Front Highway Engine Guard Crash Bar installed on Softail',
     },
   },
 ];
