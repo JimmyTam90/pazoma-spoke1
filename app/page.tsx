@@ -5,6 +5,7 @@ import CouponBox from '@/components/CouponBox';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import { CATEGORIES, PRODUCTS, formatPrice } from '@/lib/catalog';
 import RatingBlock from '@/components/RatingBlock';
+import ReviewsSection from '@/components/ReviewsSection';
 import NewsletterForm from '@/components/NewsletterForm';
 import PromoPopup from '@/components/PromoPopup';
 import { SITE, VIDEO, pageUrl } from '@/lib/config';
@@ -234,6 +235,9 @@ export default function Home() {
           </div>
         </section>
       ) : null}
+
+      {/* CUSTOMER REVIEWS (renders only when real reviews exist in lib/reviews.ts) */}
+      <ReviewsSection />
 
       {/* NEWSLETTER */}
       <NewsletterForm />

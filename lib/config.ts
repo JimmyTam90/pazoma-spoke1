@@ -23,9 +23,9 @@ export const SITE = {
 /**
  * Review rating. Leave null until you have a real, verifiable rating
  * (e.g. from the merchant or a review platform) — the block is then hidden.
- * Example: { value: 4.8, count: 120, source: 'Pazoma Racing store reviews' }
+ * Example: { value: 4.8, count: 120, source: 'Pazoma Racing store reviews', label: 'Rated 4.8/5 by 120 riders' }
  */
-export const RATING: { value: number; count: number; source: string } | null = null;
+export const RATING: { value: number; count: number; source: string; label?: string } | null = null;
 
 export const VIDEO = { id: 'w9_JWPn-M_8', title: 'Pazoma Racing video' } as const;
 
