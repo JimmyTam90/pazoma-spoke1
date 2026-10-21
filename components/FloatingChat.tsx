@@ -1,13 +1,43 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 
 export default function FloatingChat() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  return (
-    <div className="fixed bottom-6 right-6 z-50">
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Hàm xử lý cuộn mượt xuống anchor #vip
+  const handleVipClick = (e) => {
+    e.preventDefault();
+    setIsOpen(false);
+    
+    const target = document.getElementById("vip");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.hash = "vip";
+    }
+  };
+
+  if (!mounted) return null;
+
+  return createPortal(
+    <div 
+      id="tesway-support-card"
+      style={{
+        position: 'fixed',
+        right: '24px',
+        left: 'auto',
+        zIndex: 2147483647,
+      }}
+      className="bottom-[88px] md:bottom-6"
+    >
       {/* Popup menu thu nhỏ */}
       {isOpen && (
         <div className="absolute bottom-16 right-0 w-80 rounded-2xl border border-amber-400/30 bg-black/95 p-4 text-white shadow-2xl backdrop-blur-md transition-all sm:w-96">
@@ -37,7 +67,7 @@ export default function FloatingChat() {
             </Link>
             <a
               href="#vip"
-              onClick={() => setIsOpen(false)}
+              onClick={handleVipClick}
               className="w-full rounded-lg border border-white/20 py-2.5 text-center text-xs font-semibold text-gray-200 transition hover:bg-white/10 text-center"
             >
               🎁 Claim Extra 5% Off Coupon Code
@@ -49,7 +79,7 @@ export default function FloatingChat() {
       {/* Nút Chat tròn hình bong bóng tin nhắn (Chat Bubble Icon) */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex h-13 w-13 h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#222] border border-amber-400/40 text-amber-400 shadow-xl transition-all duration-200 hover:scale-105 hover:bg-black hover:border-amber-400 focus:outline-none"
+        className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-[#222] border border-amber-400/40 text-amber-400 shadow-xl transition-all duration-200 hover:scale-105 hover:bg-black hover:border-amber-400 focus:outline-none"
         aria-label="Open support menu"
       >
         {isOpen ? (
@@ -60,6 +90,7 @@ export default function FloatingChat() {
           </svg>
         )}
       </button>
-    </div>
+    </div>,
+    document.body
   );
 }
