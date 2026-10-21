@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
-import { BREVO_FORM_ACTION } from '@/lib/config';
+import Link from 'next/link';
+import { BREVO_FORM_ACTION, asset } from '@/lib/config';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -86,7 +87,15 @@ export default function NewsletterForm() {
         </p>
         {status !== 'success' && (
           <p className="mx-auto mt-1 max-w-xl text-xs text-gray-500">
-            By subscribing you agree to receive marketing emails from PrimeGearLab. Unsubscribe anytime. See our Privacy Policy.
+            By subscribing you agree to receive marketing emails from PrimeGearLab. Unsubscribe anytime. See our{' '}
+            <Link 
+              href={asset('/privacy')} 
+              className="text-amber-400 underline transition hover:text-amber-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy Policy
+            </Link>.
           </p>
         )}
       </div>
