@@ -12,8 +12,8 @@ export default function FloatingChat() {
     setMounted(true);
   }, []);
 
-  // Xử lý cuộn mượt xuống phần #vip
-  const handleVipClick = (e) => {
+  // Đã thêm kiểu dữ liệu (e: any) để tránh lỗi TypeScript trên Vercel
+  const handleVipClick = (e: any) => {
     e.preventDefault();
     setIsOpen(false);
     
