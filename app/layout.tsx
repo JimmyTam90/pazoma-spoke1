@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import Analytics from '@/components/Analytics';
+import FloatingChat from '@/components/FloatingChat';
 import { BASE_PATH, SITE } from '@/lib/config';
 
 const TITLE = 'Pazoma Racing Parts for Harley-Davidson | Exhausts, Lighting, Guards — PrimeGearLab';
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         <MobileStickyCTA />
         <Analytics />
+        <FloatingChat />
       </body>
     </html>
   );
