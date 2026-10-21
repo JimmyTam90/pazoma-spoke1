@@ -5,6 +5,8 @@ import CouponBox from '@/components/CouponBox';
 import AffiliateCTA from '@/components/AffiliateCTA';
 import { CATEGORIES, PRODUCTS, formatPrice } from '@/lib/catalog';
 import RatingBlock from '@/components/RatingBlock';
+import NewsletterForm from '@/components/NewsletterForm';
+import PromoPopup from '@/components/PromoPopup';
 import { SITE, VIDEO, pageUrl } from '@/lib/config';
 
 export const metadata: Metadata = {
@@ -233,6 +235,9 @@ export default function Home() {
         </section>
       ) : null}
 
+      {/* NEWSLETTER */}
+      <NewsletterForm />
+
       {/* FAQ */}
       <section id="faq" className="mx-auto max-w-3xl px-4 pb-14 pt-4">
         <h2 className="text-2xl font-extrabold text-white sm:text-3xl">Pazoma Racing FAQ</h2>
@@ -261,6 +266,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <PromoPopup />
     </main>
   );
 }

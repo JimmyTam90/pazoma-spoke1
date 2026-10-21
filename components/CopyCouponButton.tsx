@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { SITE } from '@/lib/config';
 
-export default function CopyCouponButton({ className = '' }: { className?: string }) {
+type Props = { className?: string; code?: string; label?: string; copiedLabel?: string; tone?: 'light' | 'gold' };
+
+export default function CopyCouponButton({ className = '', code: codeProp, label = 'Copy Code', copiedLabel = 'Copied! ✓', tone = 'light' }: Props) {
   const [copied, setCopied] = useState(false);
-  const code = SITE.coupon.code.toUpperCase();
+  const code = (codeProp ?? SITE.coupon.code).toUpperCase();
 
   async function copy() {
     try {
@@ -35,18 +37,18 @@ export default function CopyCouponButton({ className = '' }: { className?: strin
       onClick={copy}
       aria-live="polite"
       className={`inline-flex items-center gap-1.5 rounded px-3 py-1.5 text-xs font-bold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${
-        copied ? 'bg-green-600 text-white' : 'bg-white text-ink hover:bg-gray-200'
+        copied ? 'bg-green-600 text-white' : tone === 'gold' ? 'bg-amber-400 text-black hover:bg-amber-300' : 'bg-white text-ink hover:bg-gray-200'
       } ${className}`}
     >
       {copied ? (
-        'Copied! ✓'
+        copiedLabel
       ) : (
         <>
           <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <rect x="9" y="9" width="13" height="13" rx="2" />
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
           </svg>
-          Copy Code
+          {label}
         </>
       )}
     </button>

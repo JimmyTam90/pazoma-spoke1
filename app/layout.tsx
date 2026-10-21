@@ -17,11 +17,8 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   applicationName: SITE.brand,
   icons: {
-    icon: [
-      { url: `${BASE_PATH}/favicon.ico` },
-      { url: `${BASE_PATH}/favicon.png`, type: 'image/png', sizes: '512x512' },
-    ],
-    shortcut: `${BASE_PATH}/favicon.ico`,
+    icon: [{ url: `${BASE_PATH}/favicon.png`, type: 'image/png', sizes: '512x512' }],
+    shortcut: `${BASE_PATH}/favicon.png`,
     apple: `${BASE_PATH}/apple-touch-icon.png`,
   },
   openGraph: {

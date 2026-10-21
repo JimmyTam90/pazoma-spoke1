@@ -21,13 +21,11 @@ export const SITE = {
 } as const;
 
 /**
- * Review rating. Updated with active verified ratings.
+ * Review rating. Leave null until you have a real, verifiable rating
+ * (e.g. from the merchant or a review platform) — the block is then hidden.
+ * Example: { value: 4.8, count: 120, source: 'Pazoma Racing store reviews' }
  */
-export const RATING: { value: number; count: number; source: string } | null = {
-  value: 4.9,
-  count: 128,
-  source: 'Verified Buyer Reviews',
-};
+export const RATING: { value: number; count: number; source: string } | null = null;
 
 export const VIDEO = { id: 'w9_JWPn-M_8', title: 'Pazoma Racing video' } as const;
 
@@ -35,7 +33,15 @@ export const SOCIALS = [
   { name: 'Facebook', href: 'https://www.facebook.com/primegearlab/' },
   { name: 'X (Twitter)', href: 'https://x.com/primegearlab' },
   { name: 'Instagram', href: 'https://www.instagram.com/primegearlab/' },
+  { name: 'Pinterest', href: 'https://www.pinterest.com/primegearlab/' },
 ] as const;
+
+/** Brevo (Sendinblue) hosted-form endpoint used by the native newsletter form. */
+export const BREVO_FORM_ACTION =
+  'https://f5f5fd24.sibforms.com/serve/MUIFAEJG311xKReAzB2yNYNHpLw39h0E8gj-fAFCy31IT_dGppHT2232gaThshA_2PrN-n1Cpxtmpocrhfavsc7hi_1oDbuCUlQS09PpRCYae_xJo2-yrDkVVc-vS1OOKZh7FIR5ZpsUG32ib0-CH6yU22Taqf5jKzWDxxWv989Vs2bwMCb51LuR_DatJPgHHDut7FMh0YTFIrcX6A==';
+
+/** Popup coupon (supplied by the site owner — confirm it is active at the merchant checkout). */
+export const POPUP = { code: 'PAZOMA5', sessionKey: 'pazoma_popup_dismissed', delayMs: 28000, scrollRatio: 0.5 } as const;
 
 export const FREE_SHIPPING_TEXT = 'FREE SHIPPING ON ORDERS OVER $49';
 

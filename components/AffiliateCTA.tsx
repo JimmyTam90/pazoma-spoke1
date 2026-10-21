@@ -8,7 +8,7 @@ type Props = {
   slug: string;
   placement: string;
   children: ReactNode;
-  variant?: 'primary' | 'outline' | 'light';
+  variant?: 'primary' | 'outline' | 'light' | 'gold';
   className?: string;
   ariaLabel?: string;
 };
@@ -17,6 +17,7 @@ const styles = {
   primary: 'bg-accent text-white hover:bg-accent-dark',
   outline: 'border border-white/30 text-white hover:bg-white/10',
   light: 'bg-white text-ink hover:bg-gray-200',
+  gold: 'bg-amber-400 text-black hover:bg-amber-300',
 };
 
 declare global {

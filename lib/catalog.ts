@@ -40,6 +40,8 @@ const COLLECTIONS: Record<string, string> = {
   'mirrors-handlebars': `${M}/collections/mirrors${AFFILIATE_QUERY}`,
   'windshields-fairings': `${M}/collections/windshield${AFFILIATE_QUERY}`,
   'all-products': `${M}/collections/all${AFFILIATE_QUERY}`,
+  // DEFAULT_AFFILIATE_URL (store home)
+  'pazoma-home': `${M}/${AFFILIATE_QUERY}`,
   // New Arrivals: user-verified fallback to the full catalog
   'new-arrivals': `${M}/collections/all${AFFILIATE_QUERY}`,
   // Protection / crash bars / engine guards (user-verified live URL)
