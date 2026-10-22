@@ -55,44 +55,72 @@ export default function Home() {
       {/* HERO */}
       <section className="border-b border-white/10 bg-gradient-to-b from-ink to-black">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Independent guide · Pazoma Racing</p>
-            <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
-              Pazoma Racing Performance Parts for Harley-Davidson Riders
-            </h1>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-300">
-              Explore Pazoma Racing aftermarket exhausts, LED lighting, handlebars, levers, crash guards and fairings for Softail, Touring and Dyna builds.
-              We organize the catalog, point out fitment details and send you straight to the Pazoma Racing store.
-            </p>
-            <RatingBlock />
-            <ul className="mt-5 space-y-2 text-sm text-gray-300">
-              <li>✔ Free shipping banner on orders over $49 (per merchant site)</li>
-              <li>✔ {SITE.coupon.discount} off storewide with code {SITE.coupon.code}</li>
-              <li>✔ Model- and year-specific listings</li>
-            </ul>
-            <CouponBox className="mt-6 max-w-md" />
-            <div className="mt-6 flex flex-wrap gap-3">
-              <AffiliateCTA slug="all-products" placement="hero-primary">
-                Shop All Pazoma Parts
-              </AffiliateCTA>
-              <AffiliateCTA slug="engine-guards" placement="hero-secondary" variant="outline">
-                Shop Crash Bars & Guards
-              </AffiliateCTA>
+          
+          {/* CỘT TRÁI (HOẶC LUỒNG MOBILE TỪ TRÊN XUỐNG) */}
+          <div className="flex flex-col">
+            {/* 1. Tiêu đề & Mô tả luôn hiển thị đầu tiên */}
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Independent guide · Pazoma Racing</p>
+              <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+                Pazoma Racing Performance Parts for Harley-Davidson Riders
+              </h1>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-300">
+                Explore Pazoma Racing aftermarket exhausts, LED lighting, handlebars, levers, crash guards and fairings for Softail, Touring and Dyna builds.
+                We organize the catalog, point out fitment details and send you straight to the Pazoma Racing store.
+              </p>
             </div>
-            <p className="mt-4 max-w-xl text-xs text-gray-400">
-              This website may contain affiliate links. We may earn a commission when you purchase through eligible links, at no additional cost to you.
-            </p>
+
+            {/* 2. HÌNH ẢNH DÀNH RIÊNG CHO MOBILE (Nằm ngay sau mô tả & trước các nút CTA) */}
+            <div className="mt-6 lg:hidden">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-white">
+                <Image
+                  src={SITE.ogImage}
+                  alt={SITE.ogImageAlt}
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
+            {/* 3. Phần Đánh giá, Bullet, Coupon & Nút CTA */}
+            <div className="mt-6">
+              <RatingBlock />
+              <ul className="mt-5 space-y-2 text-sm text-gray-300">
+                <li>✔ Free shipping banner on orders over $49 (per merchant site)</li>
+                <li>✔ {SITE.coupon.discount} off storewide with code {SITE.coupon.code}</li>
+                <li>✔ Model- and year-specific listings</li>
+              </ul>
+              <CouponBox className="mt-6 max-w-md" />
+              <div className="mt-6 flex flex-wrap gap-3">
+                <AffiliateCTA slug="all-products" placement="hero-primary">
+                  Shop All Pazoma Parts
+                </AffiliateCTA>
+                <AffiliateCTA slug="engine-guards" placement="hero-secondary" variant="outline">
+                  Shop Crash Bars & Guards
+                </AffiliateCTA>
+              </div>
+              <p className="mt-4 max-w-xl text-xs text-gray-400">
+                This website may contain affiliate links. We may earn a commission when you purchase through eligible links, at no additional cost to you.
+              </p>
+            </div>
           </div>
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-white">
-            <Image
-              src={SITE.ogImage}
-              alt={SITE.ogImageAlt}
-              fill
-              priority
-              sizes="(min-width: 1024px) 480px, 100vw"
-              className="object-contain"
-            />
+
+          {/* CỘT PHẢI DÀNH RIÊNG CHO DESKTOP (Ẩn trên mobile, hiển thị chuẩn 2 cột bên phải khi xem trên màn hình lớn) */}
+          <div className="hidden lg:block">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-white/10 bg-white">
+              <Image
+                src={SITE.ogImage}
+                alt={SITE.ogImageAlt}
+                fill
+                priority
+                sizes="(min-width: 1024px) 480px, 100vw"
+                className="object-contain"
+              />
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -236,7 +264,7 @@ export default function Home() {
         </section>
       ) : null}
 
-      {/* CUSTOMER REVIEWS (renders only when real reviews exist in lib/reviews.ts) */}
+      {/* CUSTOMER REVIEWS */}
       <ReviewsSection />
 
       {/* NEWSLETTER */}
